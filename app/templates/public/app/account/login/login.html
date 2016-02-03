@@ -1,0 +1,63 @@
+<style>
+  body {
+
+    background: #25aae1 -webkit-image-set(url("/public/assets/images/login-background-1x.png") 1x,url("/public/assets/images/login-background-2x.png") 2x) no-repeat;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  #navContainer { display: none;
+  }
+</style>
+<!--nav-bar-->
+<div ng-include="'/components/navbar/navbar.html'"></div>
+
+
+<div ng-controller="LoginCtrl"  id="ui-login" class="login-frame ng-scope layout-column flex" >
+  <div class="layout-fill layout-padding ng-scope layout-align-center-center layout-row flex">
+
+
+
+
+    <div class="flex-sm-100 flex-md-70 flex-lg-50 flex-40">
+      <md-card class="md-cyan-theme">
+        <md-toolbar class=" md-cyan-theme">
+          <div class="layout-align-center-center layout-row padding-10 margin-top-0 flex">
+            <img class="img-responsive" id='loginLogo' alt="Elemica Logo" src="/public/assets/images/new-elemica-logo-2x.png"/>
+          </div>
+          <div class="layout-align-center-center layout-row">
+            <h1 class="md-headline ng-scope" translate>Login</h1>
+          </div>
+        </md-toolbar>
+
+
+        <md-content class="md-padding md-cyan-theme">
+          <form name="form" role="form" class="form ng-pristine ng-invalid ng-invalid-required" ng-submit="login(form)" >
+            <md-input-container class="md-cyan-theme" flex>
+              <label for="username" translate class="ng-scope">username</label>
+              <input id="username" ng-model="user.username" required class="ng-pristine ng-untouched ng-invalid
+            ng-invalid-required" aria-required="true" aria-invalid="true">
+            </md-input-container>
+            <!--password-->
+            <md-input-container class="md-cyan-theme" flex>
+              <label for="password" translate class="ng-scope">password</label>
+              <input id="password" ng-model="user.password" required class="ng-pristine ng-untouched md-input ng-invalid
+            ng-invalid-required" aria-required="true" aria-invalid="true" type="password">
+            </md-input-container>
+
+            <div class="layout-align-space-between-center layout row">
+              <md-input-container class="md-cyan-theme" flex>
+                <a class="md-primary md-button ng-scope md-cyan-theme md-ink-ripple flex">Forgot password?</a>
+              </md-input-container>
+            </div>
+
+            <button class="md-raised md-primary full-width margin-left-0 margin-right-0 margin-top-10 margin-bottom-10 md-button ng-scope
+              md-cyan-theme md-ink-ripple" type="submit"
+                    aria-label="Log in">Log in</button>
+
+          </form>
+        </md-content>
+      </md-card>
+    </div>
+
+  </div>
+</div><!--loginPage-->

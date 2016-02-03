@@ -1,0 +1,23 @@
+{
+  "name": "generator-elemica-webapp",
+  "version": "1.0.0",
+  "description": "a generator for elemica web applications and application modules",
+  "files": [
+    "app",
+    "login"
+  ],
+  "scripts": {
+    "test": "echo\"Error: no test specified\"&& exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Qwynn Marcelle",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.22.2",
+    "yosay": "^1.1.0"
+  }
+}
