@@ -7,7 +7,7 @@ angular.module('elemica-webapp')
   .config( function($stateProvider) {
     $stateProvider
       .state('login', {
-        url:'/login',
+        url:'/login/:bup',
         templateUrl: '/public/app/account/login/login.html',
         controller: 'LoginCtrl'
       })

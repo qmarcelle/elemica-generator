@@ -7,7 +7,7 @@
     "login"
   ],
   "scripts": {
-    "test": "echo\"Error: no test specified\"&& exit 1"
+    "test": "grunt test"
   },
   "keywords": [
     "yeoman-generator"
@@ -15,9 +15,37 @@
   "author": "Qwynn Marcelle",
   "license": "ISC",
   "dependencies": {
+    "underscore": "~1.5",
     "chalk": "^1.1.1",
     "mkdirp": "^0.5.1",
+    "glob": "^6.0.1",
+    "lodash": "^3.10.1",
+    "underscore.string": "^3.1.1",
     "yeoman-generator": "^0.22.2",
-    "yosay": "^1.1.0"
+    "yosay": "^1.1.0",
+    "yeoman-welcome": "^1.0.1",
+    "ng-parse-module": "~0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "~0.4.1",
+    "grunt-build-control": "^0.6.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-conventional-changelog": "^4.1.0",
+    "grunt-david": "~0.7.0",
+    "grunt-env": "^0.4.1",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-release": "^0.13.0",
+    "jit-grunt": "^0.9.1",
+    "mocha": "^2.2.5",
+    "q": "^1.0.1",
+    "recursive-readdir": "^1.2.0",
+    "shelljs": "^0.5.3",
+    "yeoman-assert": "^2.0.0"
+  },
+  "engines": {
+    "node": "^4.2.3",
+    "npm": "^2.14.7"
   }
 }

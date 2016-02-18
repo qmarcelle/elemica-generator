@@ -2,40 +2,58 @@
  * Created by qmarcelle on 2/3/2016.
  */
 angular.module('elemica-webapp')
-  .controller('LoginCtrl',[ '$scope','$location','$http','Auth','$log','session','$rootScope', function($scope, $location, $http,Auth,$log,session,$rootScope) {
+  .controller('LoginCtrl',[ '$scope','$location','$http','Auth','$log','session','$rootScope','$state','$stateParams', function($scope, $location, $http,Auth,$log,session,$rootScope,$state,$stateParams) {
 
     $scope.user = {};
     $scope.errors = {};
 
+    // $scope.badUsernameOrPassword = session.getInvalid();
 
-    $scope.login = function(form){
-      $scope.submitted = true;
 
-      //if there are no errors call auth to login
-      if(form.$valid){
-        Auth.logIn({
-            username: $scope.user.username,
-            password: $scope.user.password
+    $scope.badUsernameOrPassword = $stateParams.bup;
+    $scope.missingError = false;
 
-          })
-          .then(function(){
-            // logged in, redirect to supply chain overview
-            $rootScope.username = $scope.user.username;
-            $location.path('/main_page')
-          })
-          .catch(function(err){
-            $scope.errors.other = err.message;
-          })
+    $scope.ok = function(){
+      //make sure the user has entered both a username and password
+      if(!$scope.user.username || !$scope.user.password){
+        $scope.missingError = true;
+        return;
       }
+      Auth.logIn({
+        username: $scope.user.username,
+        password: $scope.user.password
+      });
     };
 
     //function to switch the language
     $scope.switchLanguage = function() {
-      $translate.use($scope.selectItem);
+      $translate.use($scope.language);
     };
 
     $scope.languages = ['English', 'German', 'Chinese'];
     $scope.selectItem='English';
     $scope.privacy= 'https://network.elemica.com/static/documents/Privacy-Policy-Services.pdf';
 
+
+    $scope.closeBadAlert = function(){
+      $location.path('/login/');
+      console.log("by");
+    };
+
+
+    $scope.closeRequiredAlert = function(){
+      $scope.missingError = false;
+      console.log("by");
+    };
+
+
+    //checking if anything write in the username or pass
+    $scope.checkForEnter = function($event){
+      if($event && $event.keyCode === 13){
+        $scope.ok();
+      }
+    };
+
+    $scope.state = $state.current;
+    $scope.params = $stateParams;
   }]);

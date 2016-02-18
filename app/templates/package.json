@@ -24,12 +24,15 @@
     "protractor": "^2.5.1"
   },
   "description": "gateway app",
+  "engines":{
+    "node": ">=0.8.0"
+  },
   "main": "Gruntfile.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
