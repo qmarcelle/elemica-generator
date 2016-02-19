@@ -7,6 +7,7 @@ Prerequisites:
 
 #how to install
 - cd to the path that this repo is cloned to and type the command: npm-link
+
 #how to use
 - cd to the directory that you wish to start the new project within
 - type the command: yo elemica-webapp
